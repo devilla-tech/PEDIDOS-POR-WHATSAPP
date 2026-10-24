@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +7,417 @@
     <title>Sabor Express</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <header class="header">
+<div class="app">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header>
 
         <div class="logo">
-            <img src="https://img.freepik.com/fotos-premium/hamburguesa-sobre-fondo-negro_774065-412.jpg" alt="Sabor Express" class="logo">
-    
+            <span class="logo-icon">🍔</span>
+
+            <div>
+                <h1>SABOR</h1>
+                <h2>EXPRESS</h2>
+            </div>
         </div>
 
+        <div class="header-icons">
 
-<form id="form-busqueda" class="contenedor-busqueda">
+            <div class="carrito-icono">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="contadorCarrito">0</span>
+            </div>
 
-    <input type="search" placeholder="Buscar" required>
-    <button type="submit" aria-label="Buscar" class="button-buscar">
-    🔍
-     </button>
-</form>
+            <i class="fa-solid fa-bars"></i>
 
-
+        </div>
 
     </header>
 
 
-    
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero">
+
+        <div class="hero-texto">
+
+            <h2>
+                Tu comida favorita<br>
+                a un mensaje de distancia
+            </h2>
+
+            <p>
+                Haz tu pedido fácil y rápido<br>
+                por WhatsApp
+            </p>
+
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
+            alt="Hamburguesa"
+        >
+
+    </section>
+
+
+    <!-- =========================
+         BUSCADOR
+    ========================== -->
+    <section class="buscador">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="buscar"
+            placeholder="Buscar productos..."
+        >
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORÍAS
+    ========================== -->
+    <section class="categorias">
+
+        <button class="categoria activo" data-categoria="todos">
+            Todos
+        </button>
+
+        <button class="categoria" data-categoria="hamburguesas">
+            Hamburguesas
+        </button>
+
+        <button class="categoria" data-categoria="papas">
+            Papas
+        </button>
+
+        <button class="categoria" data-categoria="bebidas">
+            Bebidas
+        </button>
+
+        <button class="categoria" data-categoria="combos">
+            Combos
+        </button>
+
+        <button class="categoria" data-categoria="postres">
+            Postres
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCTOS
+    ========================== -->
+    <main>
+
+        <h2 class="titulo-seccion">
+            🔥 Más vendidos
+        </h2>
+
+
+        <div class="productos" id="productos">
+
+
+            <!-- PRODUCTO 1 -->
+
+            <article
+                class="producto"
+                data-categoria="hamburguesas"
+                data-nombre="Hamburguesa Especial"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
+                    alt="Hamburguesa Especial"
+                >
+
+                <div class="producto-info">
+
+                    <h3>Hamburguesa Especial</h3>
+
+                    <p>
+                        Carne 150g, queso, tocino,
+                        lechuga y tomate
+                    </p>
+
+                    <div class="producto-footer">
+
+                        <strong>$120</strong>
+
+                        <button
+                            onclick="agregarProducto('Hamburguesa Especial',120)"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Agregar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCTO 2 -->
+
+            <article
+                class="producto"
+                data-categoria="papas"
+                data-nombre="Papas Especiales"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877"
+                    alt="Papas Especiales"
+                >
+
+                <div class="producto-info">
+
+                    <h3>Papas Especiales</h3>
+
+                    <p>
+                        Papas con queso,
+                        tocino y jalapeño
+                    </p>
+
+                    <div class="producto-footer">
+
+                        <strong>$85</strong>
+
+                        <button
+                            onclick="agregarProducto('Papas Especiales',85)"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Agregar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCTO 3 -->
+
+            <article
+                class="producto"
+                data-categoria="hamburguesas"
+                data-nombre="Hamburguesa BBQ"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+                    alt="Hamburguesa BBQ"
+                >
+
+                <div class="producto-info">
+
+                    <h3>Hamburguesa BBQ</h3>
+
+                    <p>
+                        Carne, queso, tocino
+                        y salsa BBQ
+                    </p>
+
+                    <div class="producto-footer">
+
+                        <strong>$135</strong>
+
+                        <button
+                            onclick="agregarProducto('Hamburguesa BBQ',135)"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Agregar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCTO 4 -->
+
+            <article
+                class="producto"
+                data-categoria="bebidas"
+                data-nombre="Refresco"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e"
+                    alt="Refresco"
+                >
+
+                <div class="producto-info">
+
+                    <h3>Refresco 600ml</h3>
+
+                    <p>
+                        Refresco frío de diferentes sabores
+                    </p>
+
+                    <div class="producto-footer">
+
+                        <strong>$35</strong>
+
+                        <button
+                            onclick="agregarProducto('Refresco 600ml',35)"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Agregar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         CARRITO FLOTANTE
+    ========================== -->
+
+    <button class="ver-carrito" id="verCarrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        Ver pedido
+
+        <span id="totalCarrito">$0</span>
+    </button>
+
+
+    <!-- =========================
+         NAVEGACIÓN INFERIOR
+    ========================== -->
+
+    <nav>
+
+        <a href="#" class="nav-activo">
+
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+
+        </a>
+
+
+        <a href="#productos">
+
+            <i class="fa-solid fa-border-all"></i>
+            <span>Menú</span>
+
+        </a>
+
+
+        <a href="#" id="navPedidos">
+
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Pedidos</span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-user"></i>
+            <span>Contacto</span>
+
+        </a>
+
+    </nav>
+
+</div>
+
+
+<!-- =========================
+     MODAL CARRITO
+========================== -->
+
+<div class="modal" id="modalCarrito">
+
+    <div class="modal-contenido">
+
+        <div class="modal-header">
+
+            <h2>🛒 Tu pedido</h2>
+
+            <button id="cerrarModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="listaCarrito"></div>
+
+
+        <div class="resumen">
+
+            <span>Total</span>
+
+            <strong id="modalTotal">
+                $0
+            </strong>
+
+        </div>
+
+
+        <input
+            type="text"
+            id="nombreCliente"
+            placeholder="Tu nombre"
+        >
+
+
+        <textarea
+            id="direccionCliente"
+            placeholder="Dirección de entrega"
+        ></textarea>
+
+
+        <button
+            class="whatsapp"
+            onclick="enviarWhatsApp()"
+        >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Pedir por WhatsApp
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
