@@ -1,0 +1,737 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+======================================== */
+
+.app {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: auto;
+    background: #090b0d;
+    padding-bottom: 100px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    min-height: 80px;
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 38px;
+}
+
+.logo h1,
+.logo h2 {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.logo h2 {
+    color: #ff2929;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 23px;
+}
+
+.header-icons i {
+    cursor: pointer;
+}
+
+.carrito-icono {
+    position: relative;
+}
+
+.carrito-icono span {
+    position: absolute;
+    top: -12px;
+    right: -13px;
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ef2525;
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 260px;
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 60%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        #090b0d 25%,
+        rgba(9, 11, 13, 0.9) 45%,
+        rgba(9, 11, 13, 0.15) 100%
+    );
+}
+
+.hero-texto {
+    position: relative;
+    z-index: 2;
+
+    width: 55%;
+    max-width: 550px;
+}
+
+.hero h2 {
+    font-size: clamp(26px, 4vw, 45px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: clamp(15px, 2vw, 19px);
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   BUSCADOR
+======================================== */
+
+.buscador {
+    max-width: 650px;
+
+    height: 52px;
+    margin: 20px auto;
+
+    background: white;
+    color: #777;
+
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+.buscador input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    padding-left: 12px;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   CATEGORÍAS
+======================================== */
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 0 20px 25px;
+}
+
+.categoria {
+    border: 1px solid #30343a;
+
+    background: #15181c;
+    color: white;
+
+    padding: 11px 20px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.categoria:hover,
+.categoria.activo {
+    background: #ef2424;
+    border-color: #ef2424;
+}
+
+
+/* ========================================
+   PRODUCTOS
+======================================== */
+
+main {
+    padding: 0 25px;
+}
+
+.titulo-seccion {
+    margin: 5px 0 20px;
+    font-size: 25px;
+}
+
+.productos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.producto {
+    min-width: 0;
+
+    background: white;
+    color: #111;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.producto img {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.producto h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.producto p {
+    color: #777;
+
+    font-size: 14px;
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+
+    flex: 1;
+}
+
+.producto-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.producto-footer strong {
+    font-size: 21px;
+}
+
+.producto-footer button {
+    border: none;
+
+    background: #ef2525;
+    color: white;
+
+    padding: 10px 14px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.producto-footer button:hover {
+    background: #ff4040;
+}
+
+
+/* ========================================
+   BOTÓN CARRITO
+======================================== */
+
+.ver-carrito {
+    position: fixed;
+
+    bottom: 85px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 40px);
+    max-width: 500px;
+
+    padding: 16px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #ef2525;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 50;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.4);
+}
+
+
+/* ========================================
+   NAVEGACIÓN INFERIOR
+======================================== */
+
+nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 1200px;
+
+    height: 75px;
+
+    background: #0d1013;
+
+    border-top: 1px solid #292c30;
+
+    display: flex;
+    justify-content: space-around;
+
+    z-index: 40;
+}
+
+nav a {
+    flex: 1;
+
+    color: #aaa;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 12px;
+}
+
+nav i {
+    font-size: 21px;
+}
+
+nav .nav-activo {
+    color: #ff2929;
+}
+
+
+/* ========================================
+   MODAL
+======================================== */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+}
+
+.modal-contenido {
+    width: 100%;
+    max-width: 500px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+    color: #111;
+
+    padding: 25px;
+
+    border-radius: 20px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.modal-header button {
+    border: none;
+    background: none;
+
+    font-size: 35px;
+
+    cursor: pointer;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.resumen {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 22px;
+
+    padding: 20px 0;
+}
+
+.modal input,
+.modal textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+.modal textarea {
+    height: 80px;
+    resize: none;
+}
+
+.whatsapp {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #19b954;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .productos {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .hero img {
+        width: 65%;
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 600px) {
+
+    .app {
+        max-width: 100%;
+    }
+
+    header {
+        min-height: 75px;
+        padding: 12px 16px;
+    }
+
+    .logo-icon {
+        font-size: 32px;
+    }
+
+    .logo h1,
+    .logo h2 {
+        font-size: 17px;
+        line-height: 17px;
+    }
+
+    .header-icons {
+        gap: 20px;
+        font-size: 21px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 205px;
+        padding: 20px 16px;
+    }
+
+    .hero img {
+        width: 75%;
+        right: -35px;
+    }
+
+    .hero::after {
+        background: linear-gradient(
+            90deg,
+            #090b0d 20%,
+            rgba(9,11,13,.88) 50%,
+            rgba(9,11,13,.15)
+        );
+    }
+
+    .hero-texto {
+        width: 75%;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    /* BUSCADOR */
+
+    .buscador {
+        margin: 15px 16px;
+        max-width: none;
+    }
+
+
+    /* CATEGORÍAS */
+
+    .categorias {
+        justify-content: flex-start;
+
+        padding: 0 16px 20px;
+
+        gap: 8px;
+    }
+
+    .categoria {
+        padding: 10px 17px;
+        font-size: 13px;
+    }
+
+
+    /* PRODUCTOS */
+
+    main {
+        padding: 0 16px;
+    }
+
+    .titulo-seccion {
+        font-size: 22px;
+    }
+
+    .productos {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .producto img {
+        height: 145px;
+    }
+
+    .producto-info {
+        padding: 11px;
+    }
+
+    .producto h3 {
+        font-size: 16px;
+    }
+
+    .producto p {
+        font-size: 12px;
+    }
+
+    .producto-footer {
+        align-items: flex-end;
+    }
+
+    .producto-footer strong {
+        font-size: 18px;
+    }
+
+    .producto-footer button {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+
+    /* MODAL DESDE ABAJO */
+
+    .modal {
+        padding: 0;
+
+        align-items: flex-end;
+    }
+
+    .modal-contenido {
+        max-width: none;
+
+        border-radius: 25px 25px 0 0;
+
+        padding: 20px;
+    }
+}
+
+
+/* ========================================
+   CELULARES MUY PEQUEÑOS
+======================================== */
+
+@media (max-width: 360px) {
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .producto img {
+        height: 200px;
+    }
+
+    .producto-footer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+}
